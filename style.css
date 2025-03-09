@@ -235,7 +235,7 @@ main {
   font-family: 'Ashley-Score', sans-serif;
   content: var(--footnote-number, '');
   display: inline-block;
-  margin-right: 4em;
+  margin-right: 2em;
 }
 
 
