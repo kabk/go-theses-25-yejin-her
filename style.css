@@ -159,8 +159,7 @@ main {
 .text-section {
   position: relative;
   font-size: 0.8rem;     
-  line-height: normal;    
-  letter-spacing: normal; 
+  line-height: normal; 
   word-spacing: normal; 
   max-width: none;      
   word-wrap: break-word; 
@@ -172,10 +171,11 @@ main {
 
 .text-section a.footnote-link {
   font-family: 'Ashley-Score', sans-serif;
-  vertical-align: baseline;
+  vertical-align: sup;
   text-indent: 0; 
-  margin-left: 2px; 
+  margin-left: 0px; 
   display: inline;
+  font-size: 0.7rem;
 }
 
 
