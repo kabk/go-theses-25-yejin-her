@@ -1,0 +1,203 @@
+
+@font-face {
+  font-family: 'Manrope-Medium';
+  src: url('fonts/Manrope-Medium.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ashley-Text';
+  src: url(fonts/Ashley-Text.otf) format('opentype');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ashley-Score';
+  src: url(fonts/Ashley-Score.otf) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'goudy_bookletter_19111_webfont';
+  src: url(fonts/SpaceMono-Regular.ttf) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  position: relative;
+  overflow: hidden;
+}
+
+html, body {
+  height: 100vh; 
+  margin: 0;   
+}
+
+
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  z-index: -1; 
+}
+
+
+.custom-font {
+  font-family: 'Ashley-Score';
+}
+
+
+
+
+
+.name-tag {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  font-size: 0.7rem; 
+  line-height: 1.2;  
+  font-family: 'Ashley-Text', sans-serif;
+  color: rgb(255, 0, 0);
+  padding: 0px 20px;
+}
+
+
+.name-tag {
+  font-size: 0.6rem; 
+}
+
+.name-tag p {
+  margin: 0; 
+}
+
+.indent1 {
+  padding-left: 0rem;
+}
+
+.indent2 {
+  padding-left: 2rem; 
+}
+
+.indent3 {
+  padding-left: 1rem; 
+}
+
+.indent4 {
+  padding-left: 4rem; 
+}
+
+
+/* 토글!!!!!!!!!!! */
+.contents-board {
+  list-style-type: none; 
+  padding: 0;            
+}
+
+.contents-board li {
+  list-style-type: none; 
+  margin: 0;             
+}
+
+.contents-board .reply {
+  display: none;         
+}
+
+/* 밑줄! */
+.contents-board > li > a {
+  text-decoration: underline; 
+  color: rgb(255, 0, 0); 
+}
+
+.contents-board a {
+  text-decoration: none; 
+  color: rgb(255, 0, 0); 
+}
+
+.contents-board > li > a:hover {
+  color: rgb(14, 163, 0); 
+}
+
+.contents-board a:hover {
+  color: rgb(14, 163, 0); 
+}
+
+
+/* ... 헤어 돌아가기 <-... */
+.main-header {
+  display: flex;
+  font-family: 'Ashley-Text', sans-serif;
+  font-size: 0.7rem; 
+  justify-content: space-between;
+  align-items: center;
+  padding:10px 30px;
+  position: sticky;
+  top: 0;
+  left: 1%;
+  width: 100vw;
+  z-index: 3;
+}
+
+
+/* Video Back */
+#background-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(50%) blur(0px);
+}
+
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 0;
+}
+
+
+/* Transition 효과 */
+.fade-out {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+
+.fade-out.show {
+  opacity: 1;
+  filter: blur(5px);
+}
+
+
+
+/* 네비게이션 링크 스타일 */
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.nav-link:active {
+  color: red;
+}

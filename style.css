@@ -1,0 +1,356 @@
+
+@font-face {
+  font-family: 'Manrope-Medium';
+  src: url(fonts/Manrope-Medium.otf) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ashley-Text';
+  src: url(fonts/Ashley-Text.otf) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ashley-Score';
+  src: url(fonts/Ashley-Score.otf) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html, body {
+  height: 100vh; 
+  padding: 0;
+  margin: 0;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+  font-family: 'Manrope-Medium', sans-serif;
+  cursor: default;
+  display: flex;
+  flex-direction: column; 
+  height: 100vh; 
+  
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* scrollbar custom */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(187, 187, 187, 0);  
+}  
+
+.content {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+.trail {
+  position: absolute;
+  background-color: #acacac;  
+  width: 4px;               
+  height: 4px;              
+  border-radius: 100%;
+  pointer-events: none;       
+}
+
+
+/* 다음챕터 넘어갈때*/
+.next {
+  position: relative;
+  font-size: 0.8rem; 
+  text-decoration: none;
+  color: rgb(255, 0, 0);
+  display: inline-block;
+  padding: 10px;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.next::after {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 1px;
+  background-color: rgb(38, 255, 0); 
+  left: -100%;
+  bottom: 0;
+  transition: left 0.5s ease-out;
+}
+
+.next:hover::after,
+.next:active::after {
+  left: 0;
+}
+
+.next:hover {
+  color: rgb(38, 255, 0); 
+}
+
+.next:active {
+  color:  rgb(38, 255, 0); 
+}
+
+
+/* Next screen transition - 슬라이스 아웃*/
+.fade-out {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  transform: translateX(-100%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 1s ease;
+}
+
+.fade-out.show {
+  filter: blur(10px); 
+  transform: translateX(0); 
+}
+
+
+/* 챕터!!!!!!!!!!!!!!! */
+.left {
+  flex: 1;
+  overflow-y: auto; 
+  overflow-x: hidden;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background: rgb(250, 244, 244);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 3%;
+  box-shadow: 0px 4px 20px rgba(123, 123, 123, 1);
+}
+
+
+
+.text-section {
+  position: relative;
+  font-size: 0.8rem;     
+  line-height: normal;    
+  letter-spacing: normal; 
+  word-spacing: normal; 
+  max-width: none;      
+  word-wrap: break-word; 
+  color: #3b2823;
+  text-indent: 4em; 
+  text-align: justify; 
+}
+
+
+.text-section a.footnote-link {
+  font-family: 'Ashley-Score', sans-serif;
+  vertical-align:super;
+  text-indent: 0; 
+  margin-left: 2px; 
+  display: inline;
+}
+
+
+.no-indent {
+  text-indent: 0;
+}
+
+.yes-indent {
+  text-indent: 4em;
+}
+
+.yesyes-indent {
+  text-indent: 4em;
+}
+
+.yesyesyes-indent {
+  text-indent: 4em; 
+  margin-left: 12em; 
+}
+
+
+/* 각주스타일 */
+/* 텍스트 섹션과 각주 링크 스타일 수정 */
+
+.footnote-link {
+  color: rgb(255, 0, 0);
+  text-decoration: none;
+  display: inline-block;  
+  margin-left: 5px;  
+}
+
+.footnote-link:hover {
+  text-decoration: underline;
+  color: rgb(38, 255, 0); 
+  cursor: pointer;  
+}
+
+
+/* Footnote 스타일 */
+
+.footnotes {
+  position: relative;
+  color: #3f322e;
+  background: rgb(250, 244, 244);
+  padding: 0.25rem 0vw 0rem 0rem; /* 상, 스크린 절반, 하, 좌 */
+  font-size: 0.6rem;
+  line-height: 1.4; 
+  text-align: left; 
+  box-shadow: 0px 0px 10px 10px rgba(250, 244, 244, 10);
+}
+
+.footnote {
+  position: relative;
+}
+
+.footnote::before {
+  font-family: 'Ashley-Score', sans-serif;
+  content: var(--footnote-number, '');
+  display: inline-block;
+  margin-right: 4em;
+}
+
+
+.footnote:target {
+  padding-top: 50px;
+  animation: yellowflash-text 60s infinite;
+}
+
+
+@keyframes yellowflash-text {
+  from { color: rgb(255, 0, 0); }
+  to   { color: inherit; }
+}
+
+
+.back-to-top {
+  color: rgb(255, 0, 0);
+}
+
+.back-to-top:hover {
+  text-decoration: underline;
+  color: rgb(38, 255, 0); 
+  cursor: pointer;  
+}
+
+
+/* Right */
+.right {
+  flex: 1;
+  position: relative;
+  background: #e3e3e3;
+  border-radius: 3%;
+  box-shadow: 10px 4px 20px rgba(123, 123, 123, 1);  
+}
+
+.sticky-image {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sticky-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ... 헤어 돌아가기 <-... */
+.main-header {
+  display: flex;
+  font-family: 'Ashley-Text', sans-serif;
+  font-size: 0.7rem; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px 10px 0px;
+  position: sticky;
+  background: rgb(250, 244, 244);
+  top: 0;
+  left: 1%;
+  width: 100vw;
+  z-index: 3;
+  box-shadow: 0px 0px 10px 1px rgba(250, 244, 244, 100); /* x,y,블러반경,스프레드,색*/
+}
+
+.return-button {
+  color: rgb(255, 0, 0); 
+}
+
+.return-button:hover {
+  color: rgb(14, 163, 0); 
+}
+
+
+#image-caption {
+  position: fixed; 
+  font-family: 'Ashley-Text', sans-serif;
+  font-size: 0.55rem; 
+  padding: 20px 20px 0px 0px;
+  top: 0;
+  right: 0; 
+  color: #6b6b6b;
+  text-align: right; 
+  z-index: 8888;
+  word-wrap: break-word; 
+  white-space: normal;  
+  max-width: 40vw; 
+}
+
+
+
+
+@media (max-width: 768px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .left {
+    order: 1;
+    flex-basis: 70%;
+  }
+
+
+  .right {
+    order: 2;
+    display: none; 
+  }
+
+    #image-caption {
+      display: none; 
+    }
+
+  
+}
