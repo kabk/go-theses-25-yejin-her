@@ -306,35 +306,41 @@ main {
 }
 
 
+#image-caption {
+  position: fixed; 
+  font-family: 'Ashley-Text', sans-serif;
+  font-size: 0.55rem; 
+  padding: 20px 20px 0px 0px;
+  top: 0;
+  right: 0; 
+  color: #6b6b6b;
+  text-align: right; 
+  z-index: 8888;
+  word-wrap: break-word; 
+  white-space: normal;  
+  max-width: 40vw; 
+}
+
 @media (max-width: 768px) {
   .content {
     display: flex;
     flex-direction: column;
-    height: 100vh; 
+    height: 100vh;
   }
 
   .left {
-    order: 1; 
-    flex-basis: 70%; 
+    order: 1;
+    flex-basis: 70%;
   }
+
 
   .right {
     order: 2;
-    flex-basis: 30%; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;  
-    position: relative;  
-    background: #e3e3e3;
-    border-radius: 3%;
-    overflow: hidden; 
-    box-shadow: 0px 0px 10px 1px rgba(255, 255, 255, 10); /* x,y,블러반경,스프레드,색*/
+    display: none; 
   }
 
-  .sticky-image {
-    width: 100%;   
-    height: auto;
-    object-fit: cover;
-  }
+    #image-caption {
+      display: none; 
+    }
+
 }
