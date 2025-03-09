@@ -219,7 +219,7 @@ main {
   position: relative;
   color: #3f322e;
   background: rgb(250, 244, 244);
-  padding: 0.25rem 0vw 0rem 0rem; /* 상, 스크린 절반, 하, 좌 */
+  padding: 0.25rem 8rem 0rem 0rem; /* 상, 스크린 절반, 하, 좌 */
   font-size: 0.6rem;
   line-height: 1.4; 
   text-align: left; 
