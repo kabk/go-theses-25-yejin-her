@@ -321,10 +321,12 @@ main {
   max-width: 40vw; 
 }
 
+
+
+
 @media (max-width: 768px) {
   .content {
     display: flex;
-    flex-direction: column;
     height: 100vh;
   }
 
@@ -332,7 +334,6 @@ main {
     order: 1;
     flex-basis: 70%;
   }
-
 
   .right {
     order: 2;
