@@ -192,7 +192,7 @@ main {
 
 .yesyesyes-indent {
   text-indent: 4em; 
-  margin-left: 12em; 
+  margin-left: 12rem; 
 }
 
 
@@ -323,7 +323,7 @@ main {
   z-index: 8888;
   word-wrap: break-word; 
   white-space: normal;  
-  max-width: 40vw; 
+  max-width: 38vw; 
 }
 
 
