@@ -347,9 +347,22 @@ main {
     display: none; 
   }
 
-    #image-caption {
+  #image-caption {
       display: none; 
     }
 
-  
+  .yesyesyes-indent {
+      text-indent: 2em; 
+      margin-left: 3rem; 
+    }
+    
+    .footnote:target {
+      scroll-margin-top: 90vh; 
+      animation: yellowflash-text 60s infinite;
+    }
+
+    .footnotes {
+      padding: 0.25rem 1rem 0rem 0rem; /* 상, 스크린 절반, 하, 좌 */
+    }
+    
 }

@@ -302,12 +302,13 @@ main {
 /* Biblliography */
 .two-column {
   display: flex;
-  gap: 3rem;
   align-items: baseline; 
 }
 
-.two-column .biblio-indent {
+
+.biblio-indent {
   font-size: 0.7rem;
+  color: #8d7d79;
 }
 
 
@@ -323,8 +324,10 @@ main {
   align-items: baseline;
 }
 
-
-
+.two-column > div {
+  word-break: break-word; 
+  overflow: hidden; 
+}
 
 
 #image-caption {
@@ -365,4 +368,48 @@ main {
       display: none; 
     }
 
+   .two-column {
+        display: block; 
+      }
+    
+  .two-column p {
+        max-width: 93%; 
+      }
+
+}
+
+@media (max-width: 1024px) {
+  .content {
+    display: flex;
+    height: 100vh;
+  }
+
+  .left {
+    order: 1;
+    flex-basis: 70%;
+  }
+
+  .right {
+    order: 2;
+    display: none; 
+  }
+
+    #image-caption {
+      display: none; 
+    }
+
+   .two-column {
+        display: block; 
+        flex-wrap: wrap; 
+      }
+    
+  .two-column p {
+        max-width: 93%; 
+      }
+
+      
+.two-column > div {
+  word-break: break-word; 
+  overflow: hidden; 
+}
 }
