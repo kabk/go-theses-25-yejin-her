@@ -302,7 +302,7 @@ main {
 /* Biblliography */
 .two-column {
   display: flex;
-  gap: 1rem;
+  gap: 3rem;
   align-items: baseline; 
 }
 
@@ -317,7 +317,7 @@ main {
   max-width: 80%;
   font-size: 0.55rem;
   text-align: left;
-  max-width: 100vw; /* 두 개의 칼럼으로 나누기 */
+  max-width:100vw; /* 두 개의 칼럼으로 나누기 */
   margin: 0; 
   padding: 0; 
   align-items: baseline;
