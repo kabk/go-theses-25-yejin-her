@@ -256,7 +256,7 @@ main {
 
 .back-to-top:hover {
   text-decoration: underline;
-  color: rgb(38, 255, 0); 
+  color:  rgb(38, 255, 0); 
   cursor: pointer;  
 }
 
@@ -307,7 +307,7 @@ main {
 }
 
 .return-button:hover {
-  color: rgb(14, 163, 0); 
+  color:  rgb(38, 255, 0); 
 }
 
 
