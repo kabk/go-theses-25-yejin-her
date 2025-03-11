@@ -73,6 +73,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
+
 // ⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰⋰
 
 window.onload = () => {
@@ -80,9 +82,9 @@ window.onload = () => {
   let startIndex = 1; // 기본 시작 번호는 1
 
   if (currentPage === 'chapter2.html') {
-    startIndex = 41;
+    startIndex = 42;
   } else if (currentPage === 'chapter3.html') {
-    startIndex = 64; 
+    startIndex = 65; 
   }
 
   document.querySelectorAll('.footnote').forEach((footnote, index) => {
