@@ -82,9 +82,9 @@ window.onload = () => {
   let startIndex = 1; // 기본 시작 번호는 1
 
   if (currentPage === 'chapter2.html') {
-    startIndex = 42;
+    startIndex = 39;
   } else if (currentPage === 'chapter3.html') {
-    startIndex = 65; 
+    startIndex = 60; 
   }
 
   document.querySelectorAll('.footnote').forEach((footnote, index) => {
